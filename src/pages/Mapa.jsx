@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import 'mapbox-gl/dist/mapbox-gl.css';
-import mapboxgl from 'mapbox-gl';
+import mapboxgl, { clearStorage } from 'mapbox-gl';
 import TablaIca from "../components/TablaIca";
 
 
@@ -47,9 +47,12 @@ export function Mapa() {
 
                     let elemento = document.createElement('div');
                     let h1 = document.createElement('h1');
-                    var color = 0;
-                    const long = element.longitud;
+                    var color = "";
+                    const long = element.longitud; 
+                    console.log(long);
+                    
                     const lat = element.latitud;
+                    console.log(lat);
                     let calcularPm = 0;
                     let calcularCo = 0;
                     let calcularOzono = 0;
