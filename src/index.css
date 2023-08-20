@@ -190,6 +190,26 @@ td {
 
 }
 
+.btLink{
+  background-color: #0B2239;
+  color: aliceblue;
+  border: 2px solid;
+  border-color: white;
+  padding: 4px;
+  text-decoration: none;
+  border-radius: 10%;
+}
+
+.btLink:hover{
+  background-color:#01E500;
+  color: black;
+  border: 2px solid;
+  border-color: white;
+  padding: 4px;
+  text-decoration: none;
+  border-radius: 10%;
+}
+
 
 @media screen and (max-width:510px) {
 

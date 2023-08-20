@@ -1,4 +1,5 @@
 import { useRouteError } from "react-router-dom";
+import { Link } from 'react-router-dom';
 const NotFound = () => {
     const error = useRouteError();
     console.log(error);
@@ -6,6 +7,7 @@ const NotFound = () => {
         <h1>{`Error ${error.status}`}</h1>
         <p>Page not found</p>
         <p>{error.statusText || error.message}</p>
+        <Link className="btLink" to={"/"}>Ir al inicio</Link>
 
     </div>);
 };
