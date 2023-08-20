@@ -1,5 +1,5 @@
-const About = () =>{
-    return"About";
-};
+// const About = () =>{
+//     return"About";
+// };
 
-export default About;
+// export default About;

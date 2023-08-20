@@ -6,6 +6,8 @@ import TablaIca from "../components/TablaIca";
 
 export function Mapa() {
     const [datos, setdatos] = useState([]);
+    const [error, setError] = useState(null);
+    const timeout = 10000;
     //  const [map, setMap] = useState("");
     const intervalRef = useRef(null);
     const markers = [];
@@ -13,7 +15,9 @@ export function Mapa() {
     // Set marker options.
     let map;
     let marker = null;
+
     useEffect(() => {
+
 
         map = new mapboxgl.Map({
             container: 'map', // container ID
@@ -22,24 +26,38 @@ export function Mapa() {
             zoom: 14, // starting zoom
         });
 
-
-        obtenerDatos();
-        intervalRef.current = setInterval(() => {
+        if (!error) {
             obtenerDatos();
-        }, 1000);
+            intervalRef.current = setInterval(() => {
+                obtenerDatos();
+            }, 1000);
+        }
 
-        return () => {
-            clearInterval(intervalRef.current);
-        };
+        return () => clearInterval(intervalRef.current);
         // setDatos((datos) => [...datos, datosjson])
-    }, [])
+    }, [error])
 
 
     const obtenerDatos = async () => {
 
         let url = 'http://191.101.235.193/lastData';
-        fetch(url)
-            .then(res => res.json())
+
+        const fetchPromesa = fetch(url);
+        const timeoutPromise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject(new Error('Tiempo de espera agotado'));
+            }, timeout);
+        });
+
+
+        Promise.race([fetchPromesa, timeoutPromise])
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error(`HTTP error! Status: ${res.code}`);
+                }
+                return res.json();
+            })
+
             .then((respuesta) => {
 
                 respuesta.forEach(element => {
@@ -48,9 +66,9 @@ export function Mapa() {
                     let elemento = document.createElement('div');
                     let h1 = document.createElement('h1');
                     var color = "";
-                    const long = element.longitud; 
+                    const long = element.longitud;
                     console.log(long);
-                    
+
                     const lat = element.latitud;
                     console.log(lat);
                     let calcularPm = 0;
@@ -169,11 +187,24 @@ export function Mapa() {
                     //  marker.remove();
 
                 });
+            }).catch(error => {
+                console.log(error);
+                setError(`Error al conectarse al servidor ${error}`);
+
             })
     }
 
 
+
+
     return (<main>
+        {error && <div className="Error">
+            <h1 > {error}</h1>
+
+            <button className=" btnError" onClick={() => location.reload() }>Recargar</button>
+        
+        </div>}
+
         <div className='mapa' id="map"></div>
         <TablaIca />
     </main>)

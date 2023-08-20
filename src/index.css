@@ -162,6 +162,35 @@ td {
   color: black;
 }
 
+.Error{
+  display: flex;
+  flex-direction: column;
+  background-color: #96001E;
+  text-align: center;
+  color: aliceblue;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnError{
+  background-color: aliceblue;
+  color: #96001E;
+  border-radius: 20%;
+  padding: 10px;
+  margin: 4px;
+
+}
+
+.btnError:hover{
+  background-color:green;
+  color:white;
+  border-radius: 20%;
+  padding: 10px;
+  margin: 4px;
+
+}
+
+
 @media screen and (max-width:510px) {
 
   .navM {
