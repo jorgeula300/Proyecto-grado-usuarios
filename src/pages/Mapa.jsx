@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl, { clearStorage } from 'mapbox-gl';
-import TablaIca from "../components/TablaIca";
+// import TablaIca from "../components/TablaIca";
+import TablaIca2 from "../components/TablaIca2";
 
 
 export function Mapa() {
@@ -102,7 +103,7 @@ export function Mapa() {
                     calcularNo3 = (diocidoNitrogeno);
                     calcularSo3 = (diocidoAzufre);
 
-                    calculoTotal = (calcularPm + calcularCo + calcularOzono + calcularNo3 + calcularSo3) * 100;
+                    calculoTotal = (calcularPm + calcularCo + calcularOzono + calcularNo3 + calcularSo3) * 10;
                     numero = calculoTotal.toFixed(1);
 
                     console.log(calculoTotal);
@@ -174,11 +175,13 @@ export function Mapa() {
                     marker = new mapboxgl.Marker({
                         element: elemento
                     }).setLngLat([long, lat]).setPopup(new mapboxgl.Popup().setText(`
-                    Humedad: ${humedad}
-                    Temperatura: ${temperatura}
-                    Ozono: ${ozono}
-                    Co: ${co}
-                    Polvo: ${pm}
+                    Humedad: ${humedad} \n
+                    Temperatura: ${temperatura}\n
+                    Ozono: ${ozono}\n
+                    Co: ${co}\n
+                    Polvo: ${pm}\n
+                    Diocido Nitrogeno: ${diocidoNitrogeno}\n
+                    Diocido Azufre: ${diocidoAzufre}
 
                     
                     `))//ele.mediciones.co2
@@ -205,8 +208,10 @@ export function Mapa() {
         
         </div>}
 
-        <div className='mapa' id="map"></div>
-        <TablaIca />
+        <div className='mapa' id="map">
+        <TablaIca2/>
+        </div>
+        {/* <TablaIca /> */}
     </main>)
 }
 

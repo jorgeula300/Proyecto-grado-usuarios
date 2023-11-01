@@ -1,6 +1,10 @@
 * {
   margin: 0;
   padding: 0;
+
+}
+body{
+  background-color: #F0F0F0;
 }
 
 .main {
@@ -20,7 +24,7 @@
   justify-content: space-between;
   width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   left: 0;
 }
 
@@ -63,6 +67,7 @@
 .mapa {
   width: 100%;
   height: 100vh;
+  position: relative;
 }
 
 .articulo {
@@ -91,13 +96,29 @@
 }
 
 .containerIca {
-  background-color: rgb(11, 34, 57,0.6);
+  background-color: rgb(11, 34, 57, 0.6);
   color: white;
   width: 40%;
   position: absolute;
   left: 59.52%;
   top: 0;
 
+}
+
+.containerIca2 {
+  background-color: rgb(11, 34, 57, 0.6);
+  color: white;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  margin: 0 auto;
+  top: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Outfit', sans-serif;  
+  font-size:100%;
 }
 
 .ica {
@@ -114,7 +135,7 @@
   table-layout: fixed;
 }
 
-a{
+a {
   cursor: pointer;
 }
 
@@ -135,34 +156,77 @@ td {
 .tableVerde {
   background-color: #01E500;
   color: black;
+  padding: 0 5px;
+  border: black;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border-radius: 7%;
+  font: bold;
 }
 
 .tableAmarillo {
   background-color: #FFFE04;
   color: black;
+  padding: 0 5px;
+  border: black;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border-radius: 7%;
+  font: bold;
 }
 
 .tableNaranja {
   background-color: #FF7F02;
   color: black;
+  padding: 0 5px;
+  border: black;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border-radius: 7%;
+  font: bold;
 }
 
 .tableRoja {
   background-color: #FF0100;
   color: black;
+  padding: 0 5px;
+  border: black;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border-radius: 7%;
+  font: bold;
 }
 
 .tablePurpura {
   background-color: #A63B9C;
   color: black;
+  padding: 0 5px;
+  border: black;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border-radius: 7%;
+  font: bold;
 }
 
 .tableMarron {
   background-color: #96001E;
   color: black;
+  padding: 0 5px;
+  border: black;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border-radius: 7%;
+  font: bold;
 }
 
-.Error{
+.tablaD {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 250px;
+}
+
+.Error {
   display: flex;
   flex-direction: column;
   background-color: #96001E;
@@ -172,7 +236,7 @@ td {
   align-items: center;
 }
 
-.btnError{
+.btnError {
   background-color: aliceblue;
   color: #96001E;
   border-radius: 20%;
@@ -181,16 +245,16 @@ td {
 
 }
 
-.btnError:hover{
-  background-color:green;
-  color:white;
+.btnError:hover {
+  background-color: green;
+  color: white;
   border-radius: 20%;
   padding: 10px;
   margin: 4px;
 
 }
 
-.btLink{
+.btLink {
   background-color: #0B2239;
   color: aliceblue;
   border: 2px solid;
@@ -200,8 +264,8 @@ td {
   border-radius: 10%;
 }
 
-.btLink:hover{
-  background-color:#01E500;
+.btLink:hover {
+  background-color: #01E500;
   color: black;
   border: 2px solid;
   border-color: white;
@@ -209,9 +273,118 @@ td {
   text-decoration: none;
   border-radius: 10%;
 }
+.tituloD{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.nosotrosSection{
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
 
+.personasN{
+  margin-left: 10px;
+  background-color:#FFFFFF ;
+  border-radius: 15px;
+  border: 1px solid black;
+  color: black;
+  box-shadow: 0.5px 1px 3px 1px #0B2239;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 431.6px;
+  height: 395.7px;
+}
+
+.imgUser{
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  width: 430px;
+  height: 300px;
+}
+
+.gui{
+  fill: black;
+}
+
+.correoImg{
+  border-radius: 8%;
+  width: 25px;
+  height: 25px;
+}
+
+.contactosN{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width:469px) {
+  .nosotrosSection{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .personasN{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background-color:#FFFFFF ;
+    border-radius: 15px;
+    border: 1px solid black;
+    color: black;
+    box-shadow: 0.5px 1px 3px 1px #0B2239;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: auto;
+  }
+  .imgUser{
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    width: 300px;
+    height: 300px;
+  }
+
+  .parrafoN{
+    font-size: 10px;
+    font: bold;
+  }
+  
+}
 
 @media screen and (max-width:510px) {
+  .nosotrosSection{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .personasN{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background-color:#FFFFFF ;
+    border-radius: 15px;
+    border: 1px solid black;
+    color: black;
+    box-shadow: 0.5px 1px 3px 1px #0B2239;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: auto;
+  }
 
   .navM {
     display: block;
@@ -268,6 +441,120 @@ td {
     transform-origin: 5px 0px;
     transition: all 0.2s linear;
 
+  }
+
+  .containerIca2 {
+    background-color: rgb(11, 34, 57, 0.6);
+    color: white;
+    width: 100%;
+    position: absolute;
+    margin: 0 auto;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Outfit', sans-serif;  
+    font-size:70%;
+  }
+
+  .tablaD {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+  }
+
+
+}
+
+@media screen and (max-width:1333px) {
+
+  .nosotrosSection{
+    display: flex;
+  
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .personasN{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background-color:#FFFFFF ;
+    border-radius: 15px;
+    border: 1px solid black;
+    color: black;
+    box-shadow: 0.5px 1px 3px 1px #0B2239;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 287px;
+  }
+
+  .imgUser{
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    width: 300px;
+    height: 200px;
+  }
+
+  .parrafoN{
+    font-size: 10px;
+    font: bold;
+  }
+
+  
+}
+
+
+@media screen and (max-width:987px) {
+  .nosotrosSection{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .personasN{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background-color:#FFFFFF ;
+    border-radius: 15px;
+    border: 1px solid black;
+    color: black;
+    box-shadow: 0.5px 1px 3px 1px #0B2239;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .containerIca2 {
+    background-color: rgb(11, 34, 57, 0.6);
+    color: white;
+    width: 100%;
+    position: absolute;
+    margin: 0 auto;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Outfit', sans-serif;  
+    font-size:50%;
+  }
+
+  .tablaD {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
   }
 
 

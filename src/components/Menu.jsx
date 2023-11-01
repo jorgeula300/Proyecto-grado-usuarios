@@ -17,8 +17,8 @@ export function Menu() {
                 </div>
 
                 <ul className={` ulM ${menu ? 'active' : ''} `}>
-                    <li className="liM"><NavLink className="aM" to='/'>HOME</NavLink></li>
-                    <li className="liM"><NavLink className="aM" to="/About">ABOUT</NavLink></li>
+                    <li className="liM"><NavLink className="aM" to='/'>INICIO</NavLink></li>
+                    <li className="liM"><NavLink className="aM" to="/nosotros">NOSOTROS</NavLink></li>
                 </ul>
 
 
